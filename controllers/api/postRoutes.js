@@ -25,7 +25,7 @@ router.get("/", (req, res) => {
       },
     ],
   })
-    .then((dbPostData) => res.json(dbPostData.reverse()))
+    .then((dbpostData) => res.json(dbpostData.reverse()))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -54,12 +54,12 @@ router.get("/:id", (req, res) => {
       },
     ],
   })
-    .then((dbPostData) => {
+    .then((dbpostData) => {
       if (!dbPostData) {
         res.status(404).json({ message: "No post found with this id" });
         return;
       }
-      res.json(dbPostData);
+      res.json(dbpostData);
     })
     .catch((err) => {
       console.log(err);
@@ -75,7 +75,7 @@ router.post("/", withAuth, (req, res) => {
     content: req.body.content,
     user_id: req.session.user_id,
   })
-    .then((dbPostData) => res.json(dbPostData))
+    .then((dbpostData) => res.json(dbpostData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -95,12 +95,12 @@ router.put("/:id", withAuth, (req, res) => {
       },
     }
   )
-    .then((dbPostData) => {
-      if (!dbPostData) {
+    .then((dbpostData) => {
+      if (!dbpostData) {
         res.status(404).json({ message: "No post found with this id" });
         return;
       }
-      res.json(dbPostData);
+      res.json(dbpostData);
     })
     .catch((err) => {
       console.log(err);
