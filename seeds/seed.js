@@ -1,8 +1,13 @@
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '..','.env') })
+
 const sequelize = require('../config/connection');
+
 const { User, Post } = require('../models');
 
 const userData = require('./userData.json');
-const postData = require('./posttData.json');
+const postData = require('./postData.json');
+
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
