@@ -25,3 +25,5 @@ const userRouter = require('./api/userRoutes');
 router.use('/api/user', userRouter)
 // router.use('/api/post', postRouter)
 router.use('/', homeRouter)
+
+module.exports = router;
